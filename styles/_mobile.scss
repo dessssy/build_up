@@ -1,0 +1,200 @@
+@import 'media_queries';
+
+
+
+@include mobile {
+
+    %flex_column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // HEADER AND NAV
+    .record {
+        font-family: $hand_writen;
+        font-size: 16px;
+        display: none;
+
+    }
+
+    .menu-icon > img {
+        height: 30px;
+        right: 5px;
+    }
+
+    .hamburger {
+        font-size: 12px;
+        height: 100px;
+    }
+
+    // BODY SECTION
+    // tiq she budat mahnati nakraq
+    img {
+        width: 280px;
+    }
+
+    .volume,
+    .icon {
+        width: 20px;
+    }
+
+    .menu-icon > img {
+        width: 20px;
+    }
+    // tezi otgore she budat mahnati
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 270px;
+        margin-top: 10px;
+    }
+
+    .slogan,
+    .bg_img > img,
+    .second_page,
+    .heading_shadow,
+    .red_square > img {
+        display: none;
+    }
+
+    .heading {
+        font-family: $heading;
+        font-size: 25px;
+        letter-spacing: 2px;
+        margin: 5px;
+        opacity: 0.75;
+    }
+
+    .mobile_arrow {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border: none;
+        border-left: 2px solid $red;
+        border-bottom: 2px solid $red;
+        transform: rotate(-45deg);
+    }
+
+    // BROCHURE SECTION
+
+    .brochure_heading {
+        text-align: right;
+    }
+
+    .brochure_img {
+        margin-top: 10px;
+    }
+
+    .right_red_square,
+    .second_item {
+        display: none;
+    }
+
+    // SPECIAL OFFERS
+
+    .offers_heading {
+        text-align: right;
+    }
+
+    .items {
+        width: 280px;
+    }
+
+    .first_item,
+    .second_item {
+        @extend %flex_column;
+    }
+
+    .special_offers_section hr {
+        width: 150px;
+        border: 1px solid $red;
+        border-radius: 50%;
+    }
+
+    // JOIN US SECTION
+
+    .join_us_section {
+        height: 50vh;
+        background-color: $red;
+        padding-top: 30px
+    }
+
+    .join_us_section,
+    .white_square > form {
+        @extend %flex_column;
+    }
+
+    .join_us_heading {
+        color: $light;
+        opacity: 1;
+        margin-bottom: 30px;
+    }
+
+    
+    #custom_btn,
+    #join_btn {
+        margin-top: 25px;
+    }
+
+    #custom_btn,
+    #join_btn{
+        padding: 3px 10px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #custon_btn,
+    #join_btn:hover {
+        background-color: $red;
+        color: $light;
+    }
+
+    form > input:not(#join_btn) {
+        border: none;
+        background-color: $red;
+        border-bottom: 1px solid $light;
+        width: 210px;
+    }
+
+    input::placeholder {
+        font-weight: lighter;
+        color: $light;
+        opacity: 0.5;
+        letter-spacing: 3px;
+        text-align: center;
+
+    }
+
+    // STORE LOCATION
+
+    .twisted_title {
+        font-family: $heading;
+        font-size: 20px;
+        text-align: center;
+        margin: 15px 0px;
+    }
+
+    .daily_stores {
+        background-color: $red;
+        color: $light;
+    }
+
+    .daily_stores > .twisted_title {
+        font-weight: normal;
+        padding-top: 15px;
+    }
+
+    .store_name {
+        font-weight: normal;
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+}

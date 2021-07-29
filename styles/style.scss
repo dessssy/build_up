@@ -1,0 +1,59 @@
+@import 'colors_fonts';
+@import 'media_queries';
+@import 'mobile';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+    font-weight: bold;
+}
+
+// HEADER AND NAV
+header {
+    display: flex;
+
+    .audio_player {
+        margin: 5px;
+    }
+
+    .menu-icon > img {
+        position: absolute;
+        height: 35px;
+        right: 15px;
+        top: 5px;
+    }
+   
+}
+
+.audio_player {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+    
+    .menu {
+        margin: 10px 15px;
+    }
+    .menu > a {
+        text-decoration: none;
+        color: $red;
+    }
+
+}
+
+
+
+@include tablet {
+    .bg_img > img {
+        display: none;
+    }
+}
+

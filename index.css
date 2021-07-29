@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito';
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #BF1A0B;
+}
+
+nav.hamburger {
+    position: absolute;
+}
+
+/* COMBINED */
+
+.icon,
+.volume,
+.record {
+    display: inline-block;
+}
+
+nav.hamburger,
+.first_pair,
+.second_pair,
+.third_pair,
+header,
+.prime_page,
+.wrapper_two,
+.second_page,
+.dot_nav,
+.brochure_wrapper,
+.arrow_buttons,
+.special_offers_section,
+.offers_wrapper,
+.first_item,
+.second_item {
+    display: flex;
+}
+
+.record,
+.slogan {
+    font-family: 'Caveat', cursive;
+    font-weight: normal;
+}
+
+.audio_player {
+    width: 100%;
+    height: 42px;
+    background-color: #fffbfb;
+}
+
+nav.hamburger {
+    height: 25vh;
+    width: 100%;
+    background-color: #fffbfb;
+    background-image: url(images/icons/nav_pics.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.9;
+    justify-content: space-around;
+    display: none;
+}
+
+.first_pair,
+.second_pair,
+.third_pair {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* AUDIO-PLAYER BAR */
+
+div.menu {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.volume {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.record {
+    padding-left: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu-icon {
+    background-color: white;
+}
+
+.menu-icon img {
+    margin: 2px 30px;
+    display: block;
+    height: 37px;
+}
+
+header,
+nav.hamburger {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+
+/* PRIME PAGE DISPLAY */
+
+.prime_page {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    height: 100vh;
+}
+
+.wrapper {
+    margin-top: 250px;
+    margin-left: 170px;
+}
+
+.bg_img {
+  overflow: hidden;
+  z-index: -1;
+  margin-top: -220px;
+  margin-right: -100px;
+}
+
+.logo {
+    width: 700px;
+}
+
+.slogan {
+    font-size: 56px;
+    color: #000;
+    opacity: 0.7;
+}
+
+/* SECOND PAGE */
+
+.content {
+    height: 120vh;
+}
+
+.second_page {
+    background-image: url(images/BGs/curved_red_line_right.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.wrapper_two {
+    margin-top: 200px;
+    justify-content: space-evenly;
+}
+
+.heading,
+span.heading_shadow {
+    font-family: 'Roboto Condensed', sans-serif ;
+    position: absolute;
+}
+
+.first_heading {
+    margin-top: -600px;
+    margin-left: 75px;
+}
+
+.heading {
+    z-index: 2;
+    font-size: 56px;
+    font-weight: bold;
+    opacity: 0.7;
+    letter-spacing: 15px;
+}
+
+span.heading_shadow {
+    font-size: 100px;
+    z-index: 1;
+    opacity: 0.1;
+    letter-spacing: 5px;
+}
+
+.news_img img {
+    height: 500px;
+    width: 490px;
+    color: rgba(0, 0, 0, 0.30);
+    box-shadow: 10px 5px 30px currentColor;
+}
+
+.wrapper_two > p {
+    height: 400px;
+    width: 490px;
+    line-height: 40px;
+    margin-left: -200px;
+    margin-top: 70px;
+}
+
+.dot_nav {
+    justify-content: center;
+    margin-left: -100px;
+}
+
+.dots {
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 8px solid #BF1A0B;
+    margin-left: 20px;
+}
+
+/* BROCHURE PAGE */
+
+.brochure_section {
+    background-image: url(images/BGs/red_line_right.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.brochure_wrapper {
+    justify-content: center;
+}
+
+.brochure_heading,
+.brochure_shadow {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    margin-left: 150px;
+}
+
+.red_square {
+    height: 720px;
+    width: 556px;
+    background-color: #BF1A0B;
+    border-radius: 3%;
+    margin-left: 100px;
+}
+
+.left_red_square {
+    margin-left: -100px;
+}
+
+.brochure_img {
+    margin: 30px 50px;
+}
+
+.brochure_img > img {
+    border-radius: 3%;
+}
+
+.left_red_square > .brochure_img {
+    margin-left: 110px;
+}
+
+.right_red_square > .brochure_img {
+    margin-left: -30px;
+}
+
+.arrow_buttons{
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: -120px;
+}
+
+.arrow {
+    width: 40px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    border: none;
+    border-bottom: 10px solid #BF1A0B;
+    cursor: pointer;
+}
+
+.right_arrow {
+    height: 40px;
+    border-right: 10px solid #BF1A0B;
+    transform: rotate(-45deg)
+}
+
+.left_arrow {
+    height: 40px;
+    border-left: 10px solid #BF1A0B;
+    margin-right: 200px;
+    transform: rotate(45deg)
+}
+
+
+/* SPECIAL OFFERS PAGE */
+
+.special_offers_section {
+    background-image: url(images/BGs/curved_red_line_left.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.offers_wrapper {
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+}
+
+.offers_heading,
+.offers_heading_shadow {
+    margin-top: -700px;
+    right: 0;
+}
+
+.first_item,
+.second_item {
+    flex-direction: column;
+    align-items: center;
+}
+
+.items {
+    height: 510px;
+    width: 510px;
+}
+
+hr {
+    border: 1px solid #BF1A0B;
+    width: 300px;
+    margin: 15px;
+}
+
+.item_name {
+    color: #BF1A0B;
+    font-size: 26px;
+    letter-spacing: 7px;
+    line-height: 45px;
+}
+
+/* JOIN US PAGE */
+
+.join_us_section {
+    background-image: url(images/BGs/red_line_left.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+footer.content {
+    height: 40vh;
+}
