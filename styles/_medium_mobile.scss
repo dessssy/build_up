@@ -6,33 +6,41 @@
         align-items: center;
     }
 
-    // HEADER AND NAV
-    .audio_player {
-        display: flex;
-        justify-content: space-between;
-    }
-    .volume,
-    .icon {
-        width: 20px;
-    }
 
-    .record {
+    // COMBINED
+    .record,
+    .slogan,
+    .bg_img > img,
+    .second_page,
+    .heading_shadow,
+    .red_square > img {
         display: none;
     }
 
-    .wrapper {
+    .wrapper,
+    .brochure_section,
+    .special_offers_section,
+    .join_us_section,
+    .non_stop_stores,
+    .daily_stores {
         @extend %flex_column;
     }
 
-    .news_img > img {
-        display: none;
+    // HEADER AND NAV
+    img.volume,
+    img.icon {
+        width: 20px;
     }
 
-    img {
-        width: 414px;
-    }
-
+    // MAIN PAGE
     .logo {
+        width: 404px;
+        margin-top: 10px;
+    }
+
+    // BROCHURE PAGE
+    .brochure_img > img,
+    .items{
         width: 404px;
     }
 
