@@ -1,32 +1,66 @@
 @import 'colors_fonts';
-@import 'media_queries';
-@import 'medium_mobile';
 @import 'small_mobile';
+
+
+%bg_cover_no-repeat{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito';
-    font-weight: bold;
+    font-family: $primary;
+    font-size: 1rem;
+}
+
+// UTILITY
+
+section:not(.stores_location_section) {
+    padding: 1.2rem;
+}
+
+.content {
+    height: 120vh;
+}
+
+img:not(.bg_img,.volume,.icon,.menu-icon,.logo){
+    height: 30rem;
 }
 
 // HEADER AND NAV
+
 header {
     display: flex;
+    background-color: $light;
+    height: 2.8rem;
 
     .audio_player {
-        margin: 5px;
+        margin: 0.3rem;
+    }
+
+    .record {
+        font-family: $accent;
+        font-size: 1.5rem;
+        font-weight: normal;
     }
 
     .menu-icon > img {
         position: absolute;
-        height: 35px;
-        right: 15px;
-        top: 5px;
+        height: 2.2rem;
+        right: 1.2rem;
+        top: 0.3rem;
     }
    
+}
+
+header,
+nav.hamburger {
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
 .audio_player {
@@ -35,13 +69,13 @@ header {
 }
 
 .hamburger {
-    height: 120px;
+    height: 9.2rem;
     display: flex;
     justify-content: space-between;
     display: none;
     
     .menu {
-        margin: 10px 15px;
+        margin: 0.8rem 1rem;
     }
     .menu > a {
         text-decoration: none;
@@ -51,12 +85,85 @@ header {
 }
 
 
+// LANDING PAGE
 
+.prime_page {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    height: 100vh;
 
-
-@include tablet {
-    .bg_img > img {
-        display: none;
+    .wrapper {
+        margin: 15.5rem 0 0 8rem;
+        @include tablet {
+            margin: 15.5rem 0 0 3rem;
+        }
     }
+
+    .slogan {
+        font-family: $accent;
+        font-size: 3.2rem;
+    }
+
+    .bg_img {
+        overflow: hidden;
+        z-index: -1;
+        margin-top: -17.5rem;
+        margin-right: -9rem;
+        @include tablet {
+            height: 55rem;
+            margin: -6rem 0 0 0 ;
+            overflow: hidden;
+            z-index: -2;
+        }
+      }
+
+      .logo {
+          width: 45rem;
+      }
 }
+
+
+
+
+
+// NEWS PAGE
+
+.second_page {
+    background-image: url(../images/BGs/curved_red_line_right.svg);
+    @extend %bg_cover_no-repeat;
+}
+
+
+// BROCHURE PAGE
+    .brochure_section {
+        background-image: url(../images/BGs/red_line_right.svg);
+        @extend %bg_cover_no-repeat;
+        background-position: bottom;
+    }
+
+
+// SPECIAL OFFERS PAGE
+
+.special_offers_section {
+    background-image: url(../images/BGs/curved_red_line_left.svg);
+    @extend %bg_cover_no-repeat;
+}
+
+
+// JOIN US PAGE
+
+.join_us_section {
+    background-image: url(../images/BGs/red_line_left.svg);
+    @extend %bg_cover_no-repeat;
+    background-position: bottom;
+}
+
+
+// STORE LOCATIONS PAAGE
+
+.daily_stores {
+    background-color: $green;
+}
+
+
 

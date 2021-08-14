@@ -4,14 +4,8 @@
     }
 }
 
-@mixin medium_mobile {
-    @media screen and (max-width: 414px){
-        @content;
-    }
-}
-
 @mixin tablet {
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 1000px) {
         @content;
     }
 }
