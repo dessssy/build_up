@@ -7,7 +7,6 @@
     background-repeat: no-repeat;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +19,45 @@
 
 section:not(.stores_location_section) {
     padding: 1.2rem;
+
+    @include small_mobile {
+        padding: 0;
+    }
 }
 
 .content {
     height: 120vh;
+
+    @include small_mobile {
+        height: 100%;
+    }
 }
 
-img:not(.bg_img,.volume,.icon,.menu-icon,.logo){
+img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
     height: 30rem;
+
+    @include small_mobile {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.heading {
+    font-family: $heading;
+
+    @include small_mobile {
+        float: right;
+        margin: 0 0.3rem 0.5rem 0;
+        font-size: 1.5rem;
+        font-weight: normal;
+        letter-spacing: 0.2rem;
+    }
+}
+
+.heading_shadow {
+    @include small_mobile {
+        display: none;
+    }
 }
 
 // HEADER AND NAV
@@ -45,6 +75,10 @@ header {
         font-family: $accent;
         font-size: 1.5rem;
         font-weight: normal;
+
+        @include small_mobile {
+            display: none;
+        }
     }
 
     .menu-icon > img {
@@ -52,6 +86,10 @@ header {
         height: 2.2rem;
         right: 1.2rem;
         top: 0.3rem;
+
+        @include small_mobile {
+            right: 0.5rem;
+        }
     }
    
 }
@@ -92,16 +130,29 @@ nav.hamburger {
     grid-template-columns: 5fr 6fr;
     height: 100vh;
 
+    @include small_mobile {
+        height: 100%;
+    }
+
     .wrapper {
         margin: 15.5rem 0 0 8rem;
         @include tablet {
             margin: 15.5rem 0 0 3rem;
+        }
+
+        @include small_mobile {
+            margin: 0;
+            
         }
     }
 
     .slogan {
         font-family: $accent;
         font-size: 3.2rem;
+
+        @include small_mobile {
+            display: none;
+        }
     }
 
     .bg_img {
@@ -113,16 +164,24 @@ nav.hamburger {
             height: 55rem;
             margin: -6rem 0 0 0 ;
             overflow: hidden;
-            z-index: -2;
+            z-index: -1;
+        }
+
+        @include small_mobile {
+            display: none;
         }
       }
 
-      .logo {
+
+      .logo_img {
           width: 45rem;
+
+          @include small_mobile {
+              width: 17rem;
+              margin: 0.8rem 0 0.8rem 0.3rem;
+          }
       }
 }
-
-
 
 
 
@@ -131,6 +190,10 @@ nav.hamburger {
 .second_page {
     background-image: url(../images/BGs/curved_red_line_right.svg);
     @extend %bg_cover_no-repeat;
+
+    @include small_mobile {
+        display: none;
+    }
 }
 
 
@@ -139,6 +202,12 @@ nav.hamburger {
         background-image: url(../images/BGs/red_line_right.svg);
         @extend %bg_cover_no-repeat;
         background-position: bottom;
+
+
+
+        @include small_mobile {
+            background-image: none;
+        }
     }
 
 
@@ -147,6 +216,10 @@ nav.hamburger {
 .special_offers_section {
     background-image: url(../images/BGs/curved_red_line_left.svg);
     @extend %bg_cover_no-repeat;
+
+    @include small_mobile {
+        background-image: none;
+    }
 }
 
 
@@ -156,6 +229,30 @@ nav.hamburger {
     background-image: url(../images/BGs/red_line_left.svg);
     @extend %bg_cover_no-repeat;
     background-position: bottom;
+
+    @include small_mobile {
+        background-image: none;
+        background-color: $green;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .join_us_heading {
+
+        @include small_mobile {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    .white_square > form {
+
+        @include small_mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 
 
