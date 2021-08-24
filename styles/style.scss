@@ -1,5 +1,6 @@
 @import 'colors_fonts';
-@import 'small_mobile';
+// @import 'small_mobile';
+@import 'media_queries';
 
 
 %bg_cover_no-repeat{
@@ -7,12 +8,21 @@
     background-repeat: no-repeat;
 }
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: $primary;
     font-size: 1rem;
+}
+
+@include small_mobile {
+
+    * {
+        color: $dark;
+    }
+    
 }
 
 // UTILITY
@@ -49,7 +59,6 @@ img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
         float: right;
         margin: 0 0.3rem 0.5rem 0;
         font-size: 1.5rem;
-        font-weight: normal;
         letter-spacing: 0.2rem;
     }
 }
@@ -219,6 +228,26 @@ nav.hamburger {
 
     @include small_mobile {
         background-image: none;
+
+        hr {
+            width: 13rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+            border: 0.05em solid $accent_color;
+            border-radius: 50%;
+            background-color: $accent_color;
+        }
+
+        .first_item,
+        .second_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .item_name {
+                font-weight: 600;
+            }
+        }
     }
 }
 
@@ -237,12 +266,16 @@ nav.hamburger {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .red_square {
+            display: none;
+        }
     }
 
     .join_us_heading {
 
         @include small_mobile {
-            margin-bottom: 1.2rem;
+            margin: 1.2rem 0 2rem 0;
         }
     }
 
@@ -251,8 +284,42 @@ nav.hamburger {
         @include small_mobile {
             display: flex;
             flex-direction: column;
+
+            input:not(#join_btn) {
+                border: none;
+                background-color: $green;
+                border-bottom: 0.01rem solid $light;
+                width: 13rem;
+                text-align: center;
+                padding-bottom: 0.5rem;
+                }
+
+            input::placeholder {
+                color: $light;
+                opacity: 0.5;
+                letter-spacing: 0.16rem;
+            }
+        }
+
+        #custom_btn {
+            width: 6rem;
+            margin: 0 auto;
+        }
+
+        #join_btn {
+            width: 10rem;
+            margin: 0 auto;
+        }
+
+        #custom_btn,
+        #join_btn{
+            margin-top: 1.2rem;
+            padding: 0.2rem 0;
+            border-radius: 1.5rem;
+            border: none;
         }
     }
+
 }
 
 

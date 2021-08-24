@@ -12,6 +12,12 @@
   font-size: 1rem;
 }
 
+@media screen and (max-width: 280px) {
+  * {
+    color: #363333;
+  }
+}
+
 section:not(.stores_location_section) {
   padding: 1.2rem;
 }
@@ -52,7 +58,6 @@ img:not(.bg_img):not(.volume):not(.icon):not(.menu-icon):not(.logo_img) {
     float: right;
     margin: 0 0.3rem 0.5rem 0;
     font-size: 1.5rem;
-    font-weight: normal;
     letter-spacing: 0.2rem;
   }
 }
@@ -240,6 +245,31 @@ nav.hamburger {
   .special_offers_section {
     background-image: none;
   }
+  .special_offers_section hr {
+    width: 13rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    border: 0.05em solid #46910a;
+    border-radius: 50%;
+    background-color: #46910a;
+  }
+  .special_offers_section .first_item,
+  .special_offers_section .second_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .special_offers_section .first_item .item_name,
+  .special_offers_section .second_item .item_name {
+    font-weight: 600;
+  }
 }
 
 .join_us_section {
@@ -263,11 +293,14 @@ nav.hamburger {
         -ms-flex-align: center;
             align-items: center;
   }
+  .join_us_section .red_square {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 280px) {
   .join_us_section .join_us_heading {
-    margin-bottom: 1.2rem;
+    margin: 1.2rem 0 2rem 0;
   }
 }
 
@@ -281,6 +314,52 @@ nav.hamburger {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .join_us_section .white_square > form input:not(#join_btn) {
+    border: none;
+    background-color: #639E2E;
+    border-bottom: 0.01rem solid #fffbfb;
+    width: 13rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+  .join_us_section .white_square > form input::-webkit-input-placeholder {
+    color: #fffbfb;
+    opacity: 0.5;
+    letter-spacing: 0.16rem;
+  }
+  .join_us_section .white_square > form input:-ms-input-placeholder {
+    color: #fffbfb;
+    opacity: 0.5;
+    letter-spacing: 0.16rem;
+  }
+  .join_us_section .white_square > form input::-ms-input-placeholder {
+    color: #fffbfb;
+    opacity: 0.5;
+    letter-spacing: 0.16rem;
+  }
+  .join_us_section .white_square > form input::placeholder {
+    color: #fffbfb;
+    opacity: 0.5;
+    letter-spacing: 0.16rem;
+  }
+}
+
+.join_us_section .white_square > form #custom_btn {
+  width: 6rem;
+  margin: 0 auto;
+}
+
+.join_us_section .white_square > form #join_btn {
+  width: 10rem;
+  margin: 0 auto;
+}
+
+.join_us_section .white_square > form #custom_btn,
+.join_us_section .white_square > form #join_btn {
+  margin-top: 1.2rem;
+  padding: 0.2rem 0;
+  border-radius: 1.5rem;
+  border: none;
 }
 
 .daily_stores {
