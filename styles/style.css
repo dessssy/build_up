@@ -28,18 +28,41 @@ section:not(.stores_location_section) {
   }
 }
 
-.content {
+.content:not(footer) {
   height: 120vh;
 }
 
+@media screen and (max-width: 768px) {
+  .content:not(footer) {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 @media screen and (max-width: 280px) {
-  .content {
+  .content:not(footer) {
     height: 100%;
   }
 }
 
-img:not(.bg_img):not(.volume):not(.icon):not(.menu-icon):not(.logo_img) {
-  height: 30rem;
+.locations {
+  height: 60vh;
+}
+
+.locations,
+.stores {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media screen and (max-width: 280px) {
@@ -53,12 +76,27 @@ img:not(.bg_img):not(.volume):not(.icon):not(.menu-icon):not(.logo_img) {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+@media screen and (max-width: 768px) {
+  .heading {
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    text-align: right;
+    letter-spacing: 0.3rem;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .heading {
-    float: right;
     margin: 0 0.3rem 0.5rem 0;
     font-size: 1.5rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading_shadow {
+    display: none;
   }
 }
 
@@ -74,6 +112,12 @@ header {
   display: flex;
   background-color: #fffbfb;
   height: 2.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    width: 100vw;
+  }
 }
 
 header .audio_player {
@@ -97,6 +141,12 @@ header .menu-icon > img {
   height: 2.2rem;
   right: 1.2rem;
   top: 0.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  header .menu-icon > img {
+    right: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -150,6 +200,22 @@ nav.hamburger {
   height: 100vh;
 }
 
+@media screen and (max-width: 768px) {
+  .prime_page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 60vh;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .prime_page {
     height: 100%;
@@ -162,7 +228,7 @@ nav.hamburger {
 
 @media screen and (max-width: 768px) {
   .prime_page .wrapper {
-    margin: 15.5rem 0 0 3rem;
+    margin: 5rem 0;
   }
 }
 
@@ -175,6 +241,12 @@ nav.hamburger {
 .prime_page .slogan {
   font-family: "Caveat", cursive;
   font-size: 3.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .prime_page .slogan {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -192,10 +264,7 @@ nav.hamburger {
 
 @media screen and (max-width: 768px) {
   .prime_page .bg_img {
-    height: 55rem;
-    margin: -6rem 0 0 0;
-    overflow: hidden;
-    z-index: -1;
+    display: none;
   }
 }
 
@@ -209,6 +278,12 @@ nav.hamburger {
   width: 45rem;
 }
 
+@media screen and (max-width: 768px) {
+  .prime_page .logo_img {
+    width: 80vw;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .prime_page .logo_img {
     width: 17rem;
@@ -218,6 +293,31 @@ nav.hamburger {
 
 .second_page {
   background-image: url(../images/BGs/curved_red_line_right.svg);
+}
+
+@media screen and (max-width: 768px) {
+  .second_page {
+    background-image: none;
+    background-color: #639E2E;
+  }
+  .second_page .wrapper_two {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .second_page .wrapper_two p {
+    width: 40%;
+    line-height: 1.7rem;
+  }
+  .second_page .news_img > img {
+    height: 20rem;
+    width: 20rem;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -231,14 +331,53 @@ nav.hamburger {
   background-position: bottom;
 }
 
+@media screen and (max-width: 768px) {
+  .brochure_section {
+    background-image: none;
+  }
+  .brochure_section .brochure_heading::after {
+    background-image: url(../images/icons/arrow.svg);
+    background-size: 2rem 2rem;
+    display: inline-block;
+    margin-left: 2rem;
+    height: 2rem;
+    width: 2rem;
+    content: "";
+  }
+  .brochure_section .brochure_wapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .brochure_section {
     background-image: none;
+  }
+  .brochure_section .brochure_heading::after {
+    display: none;
   }
 }
 
 .special_offers_section {
   background-image: url(../images/BGs/curved_red_line_left.svg);
+}
+
+@media screen and (max-width: 768px) {
+  .special_offers_section {
+    background-image: none;
+  }
+  .special_offers_section img.items {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -275,6 +414,27 @@ nav.hamburger {
 .join_us_section {
   background-image: url(../images/BGs/red_line_left.svg);
   background-position: bottom;
+}
+
+@media screen and (max-width: 768px) {
+  .join_us_section {
+    background-image: none;
+    background-color: #639E2E;
+  }
+  .join_us_section .white_square form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .join_us_section .red_square {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -360,9 +520,51 @@ nav.hamburger {
   padding: 0.2rem 0;
   border-radius: 1.5rem;
   border: none;
+  font-weight: 600;
+}
+
+.locations {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.twisted_title {
+  font-size: 3rem;
+}
+
+.stores div {
+  margin: 0 7rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .daily_stores {
   background-color: #639E2E;
+  color: #fffbfb;
+}
+
+@media screen and (max-width: 280px) {
+  .non_stop_stores,
+  .daily_stores {
+    padding: 1.2rem 0;
+  }
+  .non_stop_stores .heading,
+  .daily_stores .heading {
+    font-weight: 600;
+  }
+  .non_stop_stores .store_name,
+  .daily_stores .store_name {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+  }
 }
 /*# sourceMappingURL=style.css.map */

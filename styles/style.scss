@@ -25,6 +25,8 @@
     
 }
 
+
+
 // UTILITY
 
 section:not(.stores_location_section) {
@@ -35,16 +37,37 @@ section:not(.stores_location_section) {
     }
 }
 
-.content {
+.content:not(footer) {
     height: 120vh;
+
+    @include tablet {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     @include small_mobile {
         height: 100%;
     }
 }
 
+.locations {
+    height: 60vh;
+}
+
+.locations, 
+.stores {
+    display: flex;
+}
+
 img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
-    height: 30rem;
+    // height: 30rem;
+
+    @include tablet {
+        // height: auto;
+        // width: auto;
+    }
 
     @include small_mobile {
         width: 100%;
@@ -55,19 +78,32 @@ img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
 .heading {
     font-family: $heading;
 
+    @include tablet {
+        margin-bottom: 1rem;
+        font-size: 2.8rem;
+        text-align: right;
+        letter-spacing: 0.3rem;
+        
+    }
+
     @include small_mobile {
-        float: right;
         margin: 0 0.3rem 0.5rem 0;
         font-size: 1.5rem;
-        letter-spacing: 0.2rem;
+        letter-spacing: 0.1rem;
+        text-align: right;
     }
 }
 
 .heading_shadow {
+    @include tablet {
+        display: none;
+    }
+
     @include small_mobile {
         display: none;
     }
 }
+
 
 // HEADER AND NAV
 
@@ -75,6 +111,10 @@ header {
     display: flex;
     background-color: $light;
     height: 2.8rem;
+
+    @include tablet {
+        width: 100vw;
+    }
 
     .audio_player {
         margin: 0.3rem;
@@ -96,6 +136,10 @@ header {
         right: 1.2rem;
         top: 0.3rem;
 
+        @include tablet {
+            right: 0.5rem;
+        }
+
         @include small_mobile {
             right: 0.5rem;
         }
@@ -108,6 +152,7 @@ nav.hamburger {
     position: sticky;
     top: 0;
     z-index: 3;
+
 }
 
 .audio_player {
@@ -139,25 +184,36 @@ nav.hamburger {
     grid-template-columns: 5fr 6fr;
     height: 100vh;
 
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 60vh;
+    }
+
     @include small_mobile {
         height: 100%;
     }
 
     .wrapper {
         margin: 15.5rem 0 0 8rem;
+
         @include tablet {
-            margin: 15.5rem 0 0 3rem;
+            margin: 5rem 0;
         }
 
         @include small_mobile {
             margin: 0;
-            
         }
     }
 
     .slogan {
         font-family: $accent;
         font-size: 3.2rem;
+
+        @include tablet {
+            text-align: center;
+        }
 
         @include small_mobile {
             display: none;
@@ -170,10 +226,7 @@ nav.hamburger {
         margin-top: -17.5rem;
         margin-right: -9rem;
         @include tablet {
-            height: 55rem;
-            margin: -6rem 0 0 0 ;
-            overflow: hidden;
-            z-index: -1;
+            display: none;
         }
 
         @include small_mobile {
@@ -184,6 +237,11 @@ nav.hamburger {
 
       .logo_img {
           width: 45rem;
+
+          @include tablet {
+              width: 80vw;
+          }
+
 
           @include small_mobile {
               width: 17rem;
@@ -200,6 +258,27 @@ nav.hamburger {
     background-image: url(../images/BGs/curved_red_line_right.svg);
     @extend %bg_cover_no-repeat;
 
+    @include tablet {
+        background-image: none;
+        background-color: $green;
+
+        .wrapper_two {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            p {
+                width: 40%;
+                line-height: 1.7rem;
+            }
+        }
+
+        .news_img > img {
+            height: 20rem;
+            width: 20rem;
+        }
+    }
+
     @include small_mobile {
         display: none;
     }
@@ -212,10 +291,33 @@ nav.hamburger {
         @extend %bg_cover_no-repeat;
         background-position: bottom;
 
+        @include tablet {
+            background-image: none;
 
+            .brochure_heading::after {
+                background-image: url(../images/icons/arrow.svg);
+                background-size: 2rem 2rem;
+                display: inline-block;
+                margin-left: 2rem;
+                height: 2rem;
+                width: 2rem;
+                content: "";
+            }
+
+            .brochure_wapper{
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+            }
+
+        }
 
         @include small_mobile {
             background-image: none;
+
+            .brochure_heading::after {
+                display: none;
+            }
         }
     }
 
@@ -225,6 +327,15 @@ nav.hamburger {
 .special_offers_section {
     background-image: url(../images/BGs/curved_red_line_left.svg);
     @extend %bg_cover_no-repeat;
+
+    @include tablet {
+        background-image: none;
+
+        img.items {
+            width: 500px;
+            height: 500px;
+        }
+    }
 
     @include small_mobile {
         background-image: none;
@@ -258,6 +369,21 @@ nav.hamburger {
     background-image: url(../images/BGs/red_line_left.svg);
     @extend %bg_cover_no-repeat;
     background-position: bottom;
+
+    @include tablet {
+        background-image: none;
+        background-color: $green;
+
+        .white_square form {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        .red_square {
+            display: none;
+        }
+    }
 
     @include small_mobile {
         background-image: none;
@@ -317,17 +443,57 @@ nav.hamburger {
             padding: 0.2rem 0;
             border-radius: 1.5rem;
             border: none;
+            font-weight: 600;
         }
     }
 
 }
 
 
-// STORE LOCATIONS PAAGE
+// STORE LOCATIONS PAGE
+
+.locations {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.twisted_title {
+    font-size: 3rem
+}
+
+.stores div {
+    margin: 0 7rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
 
 .daily_stores {
     background-color: $green;
+    color: $light;
 }
+
+
+@include small_mobile {
+
+    .non_stop_stores,
+    .daily_stores{
+        padding: 1.2rem 0;
+
+        .heading {
+            font-weight: 600;
+        }
+        
+        .store_name {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+    }
+
+}
+    
 
 
 

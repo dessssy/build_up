@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Nunito';
+    font-family: 'Roboto';
     font-weight: bold;
 }
 
@@ -128,7 +128,7 @@ nav.hamburger {
 .bg_img {
   overflow: hidden;
   z-index: -1;
-  margin-top: -220px;
+  margin-top: -260px;
   margin-right: -100px;
 }
 
@@ -211,7 +211,7 @@ span.heading_shadow {
     height: 15px;
     width: 15px;
     border-radius: 50px;
-    border: 8px solid #BF1A0B;
+    border: 8px solid #128b30;
     margin-left: 20px;
 }
 
@@ -238,7 +238,7 @@ span.heading_shadow {
 .red_square {
     height: 720px;
     width: 556px;
-    background-color: #BF1A0B;
+    background-color: #46910a;
     border-radius: 3%;
     margin-left: 100px;
 }
@@ -274,19 +274,19 @@ span.heading_shadow {
     margin-bottom: 5px;
     margin-left: 20px;
     border: none;
-    border-bottom: 10px solid #BF1A0B;
+    border-bottom: 10px solid #46910a;
     cursor: pointer;
 }
 
 .right_arrow {
     height: 40px;
-    border-right: 10px solid #BF1A0B;
+    border-right: 10px solid #46910a;
     transform: rotate(-45deg)
 }
 
 .left_arrow {
     height: 40px;
-    border-left: 10px solid #BF1A0B;
+    border-left: 10px solid #46910a;
     margin-right: 200px;
     transform: rotate(45deg)
 }
@@ -326,13 +326,13 @@ span.heading_shadow {
 }
 
 hr {
-    border: 1px solid #BF1A0B;
+    border: 1px solid #639E2E;
     width: 300px;
     margin: 15px;
 }
 
 .item_name {
-    color: #BF1A0B;
+    color: black;
     font-size: 26px;
     letter-spacing: 7px;
     line-height: 45px;
