@@ -12,12 +12,6 @@
   font-size: 1rem;
 }
 
-@media screen and (max-width: 280px) {
-  * {
-    color: #363333;
-  }
-}
-
 section:not(.stores_location_section) {
   padding: 1.2rem;
 }
@@ -28,12 +22,12 @@ section:not(.stores_location_section) {
   }
 }
 
-.content:not(footer) {
+.content:not(footer):not(.second_page) {
   height: 120vh;
 }
 
 @media screen and (max-width: 768px) {
-  .content:not(footer) {
+  .content:not(footer):not(.second_page) {
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -49,7 +43,7 @@ section:not(.stores_location_section) {
 }
 
 @media screen and (max-width: 280px) {
-  .content:not(footer) {
+  .content:not(footer):not(.second_page) {
     height: 100%;
   }
 }
@@ -91,6 +85,7 @@ section:not(.stores_location_section) {
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     text-align: right;
+    opacity: 0.7;
   }
 }
 
@@ -163,6 +158,13 @@ nav.hamburger {
   z-index: 3;
 }
 
+@media screen and (max-width: 280px) {
+  header,
+  nav.hamburger {
+    position: relative;
+  }
+}
+
 .audio_player {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,6 +172,12 @@ nav.hamburger {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 280px) {
+  .audio_player {
+    display: none;
+  }
 }
 
 .hamburger {
@@ -180,16 +188,45 @@ nav.hamburger {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: none;
+}
+
+@media screen and (max-width: 280px) {
+  .hamburger {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
 }
 
 .hamburger .menu {
   margin: 0.8rem 1rem;
 }
 
+@media screen and (max-width: 280px) {
+  .hamburger .menu {
+    text-align: center;
+    margin-top: 0.7rem;
+    margin-bottom: 0;
+  }
+}
+
 .hamburger .menu > a {
   text-decoration: none;
   color: #BF1A0B;
+}
+
+@media screen and (max-width: 280px) {
+  .hamburger .menu > a {
+    color: #363333;
+    font-weight: 600;
+    opacity: 0.7;
+  }
 }
 
 .prime_page {
@@ -461,6 +498,8 @@ nav.hamburger {
 @media screen and (max-width: 280px) {
   .join_us_section .join_us_heading {
     margin: 1.2rem 0 2rem 0;
+    color: #fffbfb;
+    font-weight: lighter;
   }
 }
 
@@ -473,6 +512,7 @@ nav.hamburger {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 1rem;
   }
   .join_us_section .white_square > form input:not(#join_btn) {
     border: none;
@@ -520,7 +560,7 @@ nav.hamburger {
   padding: 0.2rem 0;
   border-radius: 1.5rem;
   border: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .locations {
@@ -536,8 +576,20 @@ nav.hamburger {
           align-items: center;
 }
 
+@media screen and (max-width: 280px) {
+  .locations {
+    height: auto;
+  }
+}
+
 .twisted_title {
   font-size: 3rem;
+}
+
+@media screen and (max-width: 280px) {
+  .twisted_title {
+    font-size: 1.5rem;
+  }
 }
 
 .stores div {
@@ -546,12 +598,39 @@ nav.hamburger {
   text-align: center;
 }
 
+@media screen and (max-width: 280px) {
+  .stores div {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .non_stop_stores .store_name {
+    font-weight: bold;
+  }
+}
+
 .daily_stores {
   background-color: #639E2E;
   color: #fffbfb;
 }
 
 @media screen and (max-width: 280px) {
+  .daily_stores {
+    color: #fffbfb;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .stores {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .non_stop_stores,
   .daily_stores {
     padding: 1.2rem 0;
@@ -562,9 +641,10 @@ nav.hamburger {
   }
   .non_stop_stores .store_name,
   .daily_stores .store_name {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    width: 9rem;
     text-align: center;
-    font-weight: 500;
+    letter-spacing: 0.05rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

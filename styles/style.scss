@@ -17,16 +17,6 @@
     font-size: 1rem;
 }
 
-@include small_mobile {
-
-    * {
-        color: $dark;
-    }
-    
-}
-
-
-
 // UTILITY
 
 section:not(.stores_location_section) {
@@ -37,7 +27,7 @@ section:not(.stores_location_section) {
     }
 }
 
-.content:not(footer) {
+.content:not(footer, .second_page) {
     height: 120vh;
 
     @include tablet {
@@ -91,6 +81,7 @@ img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
         font-size: 1.5rem;
         letter-spacing: 0.1rem;
         text-align: right;
+        opacity: 0.7;
     }
 }
 
@@ -153,25 +144,52 @@ nav.hamburger {
     top: 0;
     z-index: 3;
 
+    @include small_mobile{
+        position: relative;
+    }
+
 }
 
 .audio_player {
     display: flex;
     align-items: center;
+
+    @include small_mobile {
+        display: none;
+    }
 }
 
 .hamburger {
     height: 9.2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     display: none;
+
+    @include small_mobile {
+        flex-direction: column;
+        height: auto;
+    }
     
     .menu {
         margin: 0.8rem 1rem;
+
+        @include small_mobile{
+            text-align: center;
+            margin-top: 0.7rem;
+            margin-bottom: 0;
+        }
+        
     }
     .menu > a {
         text-decoration: none;
         color: $red;
+
+        @include small_mobile {
+            color: $dark;
+            font-weight: 600;
+            opacity: 0.7;
+        }
     }
 
 }
@@ -278,8 +296,10 @@ nav.hamburger {
             width: 20rem;
         }
     }
+}
 
-    @include small_mobile {
+@include small_mobile {
+    .second_page {
         display: none;
     }
 }
@@ -402,6 +422,8 @@ nav.hamburger {
 
         @include small_mobile {
             margin: 1.2rem 0 2rem 0;
+            color: $light;
+            font-weight: lighter;
         }
     }
 
@@ -410,6 +432,7 @@ nav.hamburger {
         @include small_mobile {
             display: flex;
             flex-direction: column;
+            padding-bottom: 1rem;
 
             input:not(#join_btn) {
                 border: none;
@@ -443,7 +466,7 @@ nav.hamburger {
             padding: 0.2rem 0;
             border-radius: 1.5rem;
             border: none;
-            font-weight: 600;
+            font-weight: 500;
         }
     }
 
@@ -456,25 +479,52 @@ nav.hamburger {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @include small_mobile {
+        height: auto;
+    }
 }
 
 .twisted_title {
-    font-size: 3rem
+    font-size: 3rem;
+
+    @include small_mobile {
+        font-size: 1.5rem;
+    }
 }
 
 .stores div {
     margin: 0 7rem;
     font-size: 1.5rem;
     text-align: center;
+
+    @include small_mobile {
+        font-size: 1rem ;
+    }
+}
+
+.non_stop_stores .store_name {
+    @include small_mobile {
+        font-weight: bold;
+    }
 }
 
 .daily_stores {
     background-color: $green;
     color: $light;
+
+    @include small_mobile {
+        color: $light;
+    }
 }
 
 
 @include small_mobile {
+
+    .stores {
+        display: flex;
+        flex-direction: column;
+    }
 
     .non_stop_stores,
     .daily_stores{
@@ -485,9 +535,10 @@ nav.hamburger {
         }
         
         .store_name {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            width: 9rem;
             text-align: center;
-            font-weight: 500;
+            letter-spacing: 0.05rem;
         }
 
     }
