@@ -12,23 +12,27 @@
   font-size: 1rem;
 }
 
-section:not(.stores_location_section) {
-  padding: 1.2rem;
+section:not(.stores_location_section),
+.wrapper_two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 280px) {
-  section:not(.stores_location_section) {
+  section:not(.stores_location_section),
+  .wrapper_two {
     padding: 0;
   }
 }
 
-.content:not(footer):not(.second_page) {
+.content:not(footer):not(.second_page):not(.join_us_section) {
   height: 120vh;
 }
 
 @media screen and (max-width: 768px) {
-  .content:not(footer):not(.second_page) {
-    height: 100%;
+  .content:not(footer):not(.second_page):not(.join_us_section) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -43,7 +47,7 @@ section:not(.stores_location_section) {
 }
 
 @media screen and (max-width: 280px) {
-  .content:not(footer):not(.second_page) {
+  .content:not(footer):not(.second_page):not(.join_us_section) {
     height: 100%;
   }
 }
@@ -59,19 +63,27 @@ section:not(.stores_location_section) {
   display: flex;
 }
 
+img:not(.bg_img):not(.volume):not(.icon):not(.menu-icon):not(.logo_img):not(.brochure_img > img) {
+  height: 30rem;
+}
+
 @media screen and (max-width: 280px) {
-  img:not(.bg_img):not(.volume):not(.icon):not(.menu-icon):not(.logo_img) {
+  img:not(.bg_img):not(.volume):not(.icon):not(.menu-icon):not(.logo_img):not(.brochure_img > img) {
     width: 100%;
     height: 100%;
   }
 }
 
-.heading {
+.heading:not(.twisted_title) {
   font-family: "Roboto Condensed", sans-serif;
+  font-size: 5rem;
+  position: absolute;
+  margin-top: 2rem;
+  letter-spacing: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
-  .heading {
+  .heading:not(.twisted_title) {
     margin-bottom: 1rem;
     font-size: 2.8rem;
     text-align: right;
@@ -80,13 +92,23 @@ section:not(.stores_location_section) {
 }
 
 @media screen and (max-width: 280px) {
-  .heading {
+  .heading:not(.twisted_title) {
     margin: 0 0.3rem 0.5rem 0;
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     text-align: right;
     opacity: 0.7;
   }
+}
+
+.heading_shadow {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 7rem;
+  opacity: 0.1;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  letter-spacing: 1.5rem;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 768px) {
@@ -158,6 +180,13 @@ nav.hamburger {
   z-index: 3;
 }
 
+@media screen and (max-width: 768px) {
+  header,
+  nav.hamburger {
+    background-color: #fffbfb;
+  }
+}
+
 @media screen and (max-width: 280px) {
   header,
   nav.hamburger {
@@ -194,6 +223,12 @@ nav.hamburger {
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  .hamburger {
+    margin: 1rem 2.5rem;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .hamburger {
     -webkit-box-orient: vertical;
@@ -208,6 +243,12 @@ nav.hamburger {
   margin: 0.8rem 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .hamburger .menu {
+    margin: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .hamburger .menu {
     text-align: center;
@@ -219,6 +260,12 @@ nav.hamburger {
 .hamburger .menu > a {
   text-decoration: none;
   color: #BF1A0B;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger .menu > a {
+    font-size: large;
+  }
 }
 
 @media screen and (max-width: 280px) {
@@ -260,7 +307,7 @@ nav.hamburger {
 }
 
 .prime_page .wrapper {
-  margin: 15.5rem 0 0 8rem;
+  margin: 15rem 0 0 8rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -295,8 +342,7 @@ nav.hamburger {
 .prime_page .bg_img {
   overflow: hidden;
   z-index: -1;
-  margin-top: -17.5rem;
-  margin-right: -9rem;
+  margin-top: -20rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -312,7 +358,7 @@ nav.hamburger {
 }
 
 .prime_page .logo_img {
-  width: 45rem;
+  width: 38rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -329,7 +375,45 @@ nav.hamburger {
 }
 
 .second_page {
+  height: 105vh;
+  padding: 6rem 0 0 5rem;
   background-image: url(../images/BGs/curved_red_line_right.svg);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.second_page .heading,
+.second_page .heading_shadow {
+  margin-left: 4.5rem;
+}
+
+.second_page .wrapper_two {
+  padding: 5rem;
+}
+
+.second_page .wrapper_two p {
+  width: 40rem;
+  margin: 6rem 0 0 5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.second_page .dot_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.second_page .dot_nav .dots {
+  height: 1rem;
+  width: 1rem;
+  background-color: #639E2E;
+  border-radius: 50%;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -364,8 +448,32 @@ nav.hamburger {
 }
 
 .brochure_section {
+  height: 120vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(../images/BGs/red_line_right.svg);
   background-position: bottom;
+}
+
+.brochure_section .brochure_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+  width: 70%;
+}
+
+.brochure_section .brochure_wrapper div.brochure_img > img {
+  height: 48rem;
+  margin-left: -3rem;
+  margin-top: -5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -404,7 +512,68 @@ nav.hamburger {
 }
 
 .special_offers_section {
+  height: 100vh;
+  padding-top: 5rem;
   background-image: url(../images/BGs/curved_red_line_left.svg);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.special_offers_section .heading,
+.special_offers_section .heading_shadow {
+  margin-top: 6rem;
+}
+
+.special_offers_section .offers_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.special_offers_section .offers_wrapper .first_item,
+.special_offers_section .offers_wrapper .second_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.special_offers_section .offers_wrapper hr {
+  width: 15rem;
+  height: 0.1rem;
+  color: #639E2E;
+  margin: 1rem 0;
+  border-radius: 50%;
+}
+
+.special_offers_section .offers_wrapper .item_name {
+  font-size: larger;
+}
+
+.special_offers_section .offers_wrapper .arrow {
+  display: block;
+  height: 4rem;
+  width: 4rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -449,8 +618,40 @@ nav.hamburger {
 }
 
 .join_us_section {
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-image: url(../images/BGs/red_line_left.svg);
   background-position: bottom;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.join_us_section .heading,
+.join_us_section .heading_shadow {
+  margin-top: 6rem;
+}
+
+.join_us_section .join_us_wrapper {
+  margin-top: 5rem;
+}
+
+.join_us_section .join_us_wrapper .white_square > form {
+  width: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.join_us_section .red_square {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {

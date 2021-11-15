@@ -19,19 +19,21 @@
 
 // UTILITY
 
-section:not(.stores_location_section) {
-    padding: 1.2rem;
+section:not(.stores_location_section),
+.wrapper_two {
+    // padding: 1.2rem;
+    display: flex;
+    overflow: hidden;
 
     @include small_mobile {
         padding: 0;
     }
 }
 
-.content:not(footer, .second_page) {
+.content:not(footer, .second_page, .join_us_section) {
     height: 120vh;
 
     @include tablet {
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -51,13 +53,8 @@ section:not(.stores_location_section) {
     display: flex;
 }
 
-img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
-    // height: 30rem;
-
-    @include tablet {
-        // height: auto;
-        // width: auto;
-    }
+img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img, .brochure_img > img){
+    height: 30rem;
 
     @include small_mobile {
         width: 100%;
@@ -65,8 +62,12 @@ img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
     }
 }
 
-.heading {
+.heading:not(.twisted_title) {
     font-family: $heading;
+    font-size: 5rem;
+    position: absolute;
+    margin-top: 2rem;
+    letter-spacing: 0.5rem;
 
     @include tablet {
         margin-bottom: 1rem;
@@ -86,6 +87,13 @@ img:not(.bg_img,.volume,.icon,.menu-icon,.logo_img){
 }
 
 .heading_shadow {
+    font-family: $heading;
+    font-size: 7rem;
+    opacity: 0.1;
+    filter: blur(4px);
+    letter-spacing: 1.5rem;
+    font-weight: bolder;
+
     @include tablet {
         display: none;
     }
@@ -144,6 +152,10 @@ nav.hamburger {
     top: 0;
     z-index: 3;
 
+    @include tablet{
+        background-color: $light;
+    }
+
     @include small_mobile{
         position: relative;
     }
@@ -166,6 +178,10 @@ nav.hamburger {
     align-items: center;
     display: none;
 
+    @include tablet {
+        margin: 1rem 2.5rem;
+    }
+
     @include small_mobile {
         flex-direction: column;
         height: auto;
@@ -173,6 +189,10 @@ nav.hamburger {
     
     .menu {
         margin: 0.8rem 1rem;
+
+        @include tablet {
+            margin: 1.5rem
+        }
 
         @include small_mobile{
             text-align: center;
@@ -184,6 +204,10 @@ nav.hamburger {
     .menu > a {
         text-decoration: none;
         color: $red;
+
+        @include tablet {
+            font-size: large;
+        }
 
         @include small_mobile {
             color: $dark;
@@ -214,7 +238,7 @@ nav.hamburger {
     }
 
     .wrapper {
-        margin: 15.5rem 0 0 8rem;
+        margin: 15rem 0 0 8rem;
 
         @include tablet {
             margin: 5rem 0;
@@ -241,8 +265,9 @@ nav.hamburger {
     .bg_img {
         overflow: hidden;
         z-index: -1;
-        margin-top: -17.5rem;
-        margin-right: -9rem;
+        margin-top: -20rem;
+        
+
         @include tablet {
             display: none;
         }
@@ -254,7 +279,7 @@ nav.hamburger {
 
 
       .logo_img {
-          width: 45rem;
+          width: 38rem;
 
           @include tablet {
               width: 80vw;
@@ -273,8 +298,42 @@ nav.hamburger {
 // NEWS PAGE
 
 .second_page {
+    height: 105vh;
+    padding: 6rem 0 0 5rem;
     background-image: url(../images/BGs/curved_red_line_right.svg);
     @extend %bg_cover_no-repeat;
+    flex-direction: column;
+
+    .heading,
+    .heading_shadow {
+        margin-left: 4.5rem;
+    }
+
+    .wrapper_two{
+        padding: 5rem;
+        
+        p {
+            width: 40rem;
+            margin: 6rem 0 0 5rem;
+            line-height: 2.5rem;
+            text-align: center;
+
+        }
+    }
+
+    .dot_nav {
+        display: flex;
+        align-self: center;
+
+        .dots {
+            height: 1rem;
+            width: 1rem;
+            background-color: $green;
+            border-radius: 50%;
+            margin: 1rem;
+        }
+    }
+
 
     @include tablet {
         background-image: none;
@@ -307,9 +366,26 @@ nav.hamburger {
 
 // BROCHURE PAGE
     .brochure_section {
+        height: 120vh;
+        flex-direction: column;
+        align-items: center;
         background-image: url(../images/BGs/red_line_right.svg);
         @extend %bg_cover_no-repeat;
         background-position: bottom;
+
+
+        .brochure_wrapper{
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            width: 70%;
+
+            div.brochure_img > img {
+                height: 48rem;
+                margin-left: -3rem;
+                margin-top: -5rem;
+            }
+        }
 
         @include tablet {
             background-image: none;
@@ -345,8 +421,51 @@ nav.hamburger {
 // SPECIAL OFFERS PAGE
 
 .special_offers_section {
+    
+    height: 100vh;
+    padding-top: 5rem;
     background-image: url(../images/BGs/curved_red_line_left.svg);
     @extend %bg_cover_no-repeat;
+    flex-direction: column;
+    align-items: center;
+
+    .heading,
+    .heading_shadow {
+        margin-top: 6rem;
+    }
+
+    .offers_wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5rem;
+        align-items: center;
+
+        .first_item,
+        .second_item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        hr {
+            width: 15rem;
+            height: 0.1rem;
+            color: $green;
+            margin: 1rem 0;
+            border-radius: 50%;
+        }
+
+        .item_name {
+            font-size: larger;
+        }
+
+        .arrow {
+            display: block;
+            height: 4rem;
+            width: 4rem;
+        }
+    }
 
     @include tablet {
         background-image: none;
@@ -386,9 +505,31 @@ nav.hamburger {
 // JOIN US PAGE
 
 .join_us_section {
+    height: 100vh;
+    flex-direction: column;
     background-image: url(../images/BGs/red_line_left.svg);
     @extend %bg_cover_no-repeat;
     background-position: bottom;
+    align-items: center;
+
+    .heading,
+    .heading_shadow {
+        margin-top: 6rem;
+    }  
+    
+    .join_us_wrapper {
+        margin-top: 5rem;
+    
+        .white_square > form {
+            width: 15rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .red_square {
+        display: none;
+    }
 
     @include tablet {
         background-image: none;
